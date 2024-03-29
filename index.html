@@ -650,7 +650,7 @@
                             <div class="social-card_flex-content"><img src="/people.png" loading="lazy" alt="" class="social_img">
                                 <div class="social_content-txt-wrap">
                                     <div class="social_content-title"><b>Total Supply:</b></div>
-                                    <p class="para-sml">10,000,000<br>
+                                    <p class="para-sml">100,000,000<br>
                                                                  </p>
                                 </div>
 
@@ -680,8 +680,31 @@
                               <!-- <img style="margin-left:68px !important" src="/sun.png" loading="lazy" alt="" class="social_img"> -->
                                 <div class="social_content-txt-wrap">
                                     <div class="social_content-title"><b>Contract<b></div>
-                  <!-- <p class="para-sml">TBA</p> -->
-                  <p class="para-sml enforce-width" id="contract-address"><a  href="" target="_blank">TBA</a></p>
+                  <!-- <p class="para-sml"> 0x97d89956E0447B8cE6D25aeccdF3A4b22C2B6072</p> -->
+                  <p class="para-sml enforce-width" id="contract-address">
+                    <a id="copyText" style="cursor: pointer;">0x97d89956E0447B8cE6D25aeccdF3A4b22C2B6072</a>
+                    <script>
+                      document.getElementById('copyText').addEventListener('click', function () {
+    // Create a temporary textarea element
+    var textarea = document.createElement('textarea');
+    textarea.value = '0x97d89956E0447B8cE6D25aeccdF3A4b22C2B6072'; // Replace with your HTML content
+    document.body.appendChild(textarea);
+
+    // Select the text in the textarea
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the selected text to the clipboard
+    document.execCommand('copy');
+
+    // Remove the temporary textarea
+    document.body.removeChild(textarea);
+
+    // Alert the user that the text has been copied
+    alert('CA copied to clipboard!');
+});
+                    </script>
+                  </p>
                 </div>
               </div>
             </div>
@@ -1154,50 +1177,7 @@ Get ready to go to moon with $GOOGLY ! This coin isn't here to play small; it's 
 
   <script src="/plyr.js"></script>
 
-  <script>
-    const contractSpace = document.getElementById('contract-address');
-    const stakeArea = document.getElementById('stake-area');
-    if(new Date().getTime() > new Date('2023-05-25T12:00:00.000Z').getTime()){
-      contractSpace.innerHTML = 'TBA'
-    } else {
-      stakeArea.innerHTML = '';
-      contractSpace.innerHTML = 'TBA';
-    }
-    setTimeout(() => {
-      if(new Date().getTime() < new Date('2023-05-25T12:00:00.000Z').getTime()){
-        const popupBg = document.getElementById('pop-up-sect');
-        const popupCard = document.getElementById('pop-up-card');
-        popupBg.style.opacity = '1';
-        popupBg.style.pointerEvents = 'all';
-        popupCard.style.transform = 'scale(1)'
-      }
-    }, 8000)
-
-    function hidePopup() {
-      const popupBg = document.getElementById('pop-up-sect');
-      const popupCard = document.getElementById('pop-up-card');
-      popupBg.style.opacity = '';
-      popupBg.style.pointerEvents = '';
-      popupCard.style.transform = ''
-    }
-
-    var vimeo_mobile = document.getElementById("vimeovid1")
-    var playButtonmob = document.getElementById("play-button-mobile");
-
-    playButtonmob.addEventListener("click", function () {
-      var data = { method: "play" };
-      vimeo_mobile.contentWindow.postMessage(JSON.stringify(data), "*");
-      //player_mob.toggleControls(true);
-    });
-
-    var pauseButton = document.getElementById("mobile-closer");
-    pauseButton.addEventListener("click", function () {
-      vimeo_mobile.pause();
-      //player_mob.toggleControls(true);
-    });
-
-
-  </script>
+ 
 
   <script>
 
